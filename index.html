@@ -305,7 +305,108 @@
                             <span style="font-weight:600; margin-left:4px;">Ouvir</span>
                         </button>
                     </div>
-            </div>
+                </div>
+                
+                <div class="dish">
+                    <div class="dish-heart"
+                         onclick="window.open('https://www.wikiaves.com.br/wiki/bem-te-vi', '_blank')"
+                         style="cursor:pointer;">
+                        <i class="fa-solid fa-info-circle"></i>
+                    </div>
+
+                    <img src="src/images/ave5.png" class="dish-image" alt="">
+
+                    <h3 class="dish-title"
+                        style="font-size: 1.4rem; font-weight: bold; text-align:center; margin-bottom: -15px;">
+                        Bem-te-vi
+                    </h3>
+                    <span style="font-size: 0.85rem; color: #888; font-style: italic; display: block; text-align:center; margin-bottom: -6px;">
+                        Pitangus sulphuratus
+                    </span>
+
+                    <div style="text-align:center; cursor:pointer; color:#0077cc; margin-bottom: -15px;"
+                         onclick="
+                            const desc = this.nextElementSibling;
+                            if (desc.style.display === 'block') {
+                                desc.style.display = 'none';
+                                this.style.color = '#0077cc'; // azul quando fechado
+                            } else {
+                                desc.style.display = 'block';
+                                this.style.color = '#888'; // cinza quando aberto
+                            }
+                         ">
+                        Descrição
+                    </div>
+
+                    <div style="display:none; font-size:0.95rem; color:#444; text-align:center; margin-bottom: -10px;">
+                        A barriga é amarela com cauda de asas marrom-alaranjado.
+                        Seu canto é dá origem ao nome “bem-te-vi”.
+                        Alimenta-se de uma variedade de animais e plantas, incluindo insetos, lagartos e frutas.
+                    </div>
+
+                    <audio id="somAve5">
+                        <source src="src/audios/bem.mp3" type="audio/mpeg">
+                    </audio>
+
+                    <div class="dish-price">
+                        <button class="btn-default" 
+                                onclick="toggleSom('somAve5', this)"
+                                style="margin-top:10px;"> 
+                            <i class="fa-solid fa-circle-play"></i>
+                            <span style="font-weight:600; margin-left:4px;">Ouvir</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="dish">
+                    <div class="dish-heart"
+                         onclick="window.open('https://www.wikiaves.com.br/wiki/corruira', '_blank')"
+                         style="cursor:pointer;">
+                        <i class="fa-solid fa-info-circle"></i>
+                    </div>
+
+                    <img src="src/images/ave6.png" class="dish-image" alt="">
+
+                    <h3 class="dish-title"
+                        style="font-size: 1.4rem; font-weight: bold; text-align:center; margin-bottom: -15px;">
+                        Corruíra
+                    </h3>
+                    <span style="font-size: 0.85rem; color: #888; font-style: italic; display: block; text-align:center; margin-bottom: -6px;">
+                        Troglodytes musculus
+                    </span>
+
+                    <div style="text-align:center; cursor:pointer; color:#0077cc; margin-bottom: -15px;"
+                         onclick="
+                            const desc = this.nextElementSibling;
+                            if (desc.style.display === 'block') {
+                                desc.style.display = 'none';
+                                this.style.color = '#0077cc'; // azul quando fechado
+                            } else {
+                                desc.style.display = 'block';
+                                this.style.color = '#888'; // cinza quando aberto
+                            }
+                         ">
+                        Descrição
+                    </div>
+
+                    <div style="display:none; font-size:0.95rem; color:#444; text-align:center; margin-bottom: -10px;">
+                        Comum de parques e áreas urbanas.
+                        A plumagem é completamente marrom, possuindo algumas listras escuras nas pontas da asa e da cauda.
+                    </div>
+
+                    <audio id="somAve6">
+                        <source src="src/audios/cor.mp3" type="audio/mpeg">
+                    </audio>
+
+                    <div class="dish-price">
+                        <button class="btn-default" 
+                                onclick="toggleSom('somAve6', this)"
+                                style="margin-top:10px;"> 
+                            <i class="fa-solid fa-circle-play"></i>
+                            <span style="font-weight:600; margin-left:4px;">Ouvir</span>
+                        </button>
+                    </div>
+                </div>
         </section>
 
         <section id="testimonials">
@@ -422,6 +523,7 @@ function toggleSom(audioId, button) {
 </script>
 </body>
 </html>
+
 
 
 
