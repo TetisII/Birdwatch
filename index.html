@@ -13,14 +13,14 @@
 <body>
     <header>
         <nav id="navbar">
-            <i class="fa-solid fa-burger" id="nav_logo"> food</i>
+            <i class="fa-solid fa-crow" id="nav_logo"> BIRDWATCH</i>
 
             <ul id="nav_list">
                 <li class="nav-item active">
                     <a href="#home">Início</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#menu">Cardápio</a>
+                    <a href="#menu">Aves do Campus</a>
                 </li>
                 <li class="nav-item">
                     <a href="#testimonials">Avaliações</a>
@@ -42,7 +42,7 @@
                     <a href="#home">Início</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#menu">Cardápio</a>
+                    <a href="#menu">Aves do Campus</a>
                 </li>
                 <li class="nav-item">
                     <a href="#testimonials">Avaliações</a>
@@ -61,17 +61,17 @@
             <div id="cta">
                 <h1 class="title">
                     Trilha Ecopedagógica
-                    <span>Trilha Canora</span>
+                    <span>Vigia das Aves</span>
                 </h1>
 
                 <p class="description">
-                    Pare por 5 minutos e ouça a seu redor 
+                    Lorem ipsum dolor sit amet, consectetur 
                     adipiscing elit ut aliquam, purus sit amet
                 </p>
 
                 <div id="cta_buttons">
                     <a href="#" class="btn-default">
-                        Ver cardápio
+                        Ver Aves do Campus
                     </a>
 
                     <a href="tel:+55555555555" id="phone_button">
@@ -103,48 +103,66 @@
         </section>
 
         <section id="menu">
-            <h2 class="section-title">Cardápio</h2>
-            <h3 class="section-subtitle">Nossos pratos especiais</h3>
+            <h2 class="section-title">Aves do Campus</h2>
+            <h3 class="section-subtitle">Você conhece alguma dessas belas aves?</h3>
 
             <div id="dishes">
                 <div class="dish">
-                    <div class="dish-heart">
-                        <i class="fa-solid fa-heart"></i>
+                    <div class="dish-heart"
+                         onclick="window.open('https://www.wikiaves.com.br/wiki/anu-branco', '_blank')"
+                         style="cursor:pointer;">
+                        <i class="fa-solid fa-info-circle"></i>
                     </div>
 
-                    <img src="src/images/dish.png" class="dish-image" alt="">
+                    <img src="src/images/ave1.png" class="dish-image" alt="">
 
-                    <h3 class="dish-title">
-                        Lorem Ipsum
+                    <h3 class="dish-title"
+                        style="font-size: 1.4rem; font-weight: bold; text-align:center; margin-bottom: -15px;">
+                        Anu-branco
                     </h3>
-
-                    <span class="dish-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    <span style="font-size: 0.85rem; color: #888; font-style: italic; display: block; text-align:center; margin-bottom: -6px;">
+                        Guira guira
                     </span>
 
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <span>(500+)</span>
+                    <div style="text-align:center; cursor:pointer; color:#0077cc; margin-bottom: -15px;"
+                         onclick="
+                            const desc = this.nextElementSibling;
+                            if (desc.style.display === 'block') {
+                                desc.style.display = 'none';
+                                this.style.color = '#0077cc'; // azul quando fechado
+                            } else {
+                                desc.style.display = 'block';
+                                this.style.color = '#888'; // cinza quando aberto
+                            }
+                         ">
+                        Descrição
                     </div>
 
+                    <div style="display:none; font-size:0.95rem; color:#444; text-align:center; margin-bottom: -10px;">
+                        Aqui vai a descrição completa da ave.  
+                        Pode ser um texto longo, explicando comportamento, habitat e curiosidades.
+                    </div>
+
+                    <audio id="somAve1">
+                        <source src="src/audios/anu.mp3" type="audio/mpeg">
+                    </audio>
+
                     <div class="dish-price">
-                        <h4>R$20,00</h4>
-                        <button class="btn-default">
-                            <i class="fa-solid fa-basket-shopping"></i>
+                        <button class="btn-default" 
+                                onclick="toggleSom('somAve1', this)"
+                                style="margin-top:10px;"> 
+                            <i class="fa-solid fa-circle-play"></i>
+                            <span style="font-weight:600; margin-left:4px;">Ouvir</span>
                         </button>
                     </div>
                 </div>
 
                 <div class="dish">
                     <div class="dish-heart">
-                        <i class="fa-solid fa-heart"></i>
+                        <i class="fa-solid fa-info"></i>
                     </div>
 
-                    <img src="src/images/dish2.png" class="dish-image" alt="">
+                    <img src="src/images/ave2.png" class="dish-image" alt="">
 
                     <h3 class="dish-title">
                         Lorem Ipsum
@@ -154,29 +172,20 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     </span>
 
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <span>(500+)</span>
-                    </div>
-
                     <div class="dish-price">
                         <h4>R$20,00</h4>
                         <button class="btn-default">
-                            <i class="fa-solid fa-basket-shopping"></i>
+                            <i class="fa-solid fa-play"></i>
                         </button>
                     </div>
                 </div>
 
                 <div class="dish">
                     <div class="dish-heart">
-                        <i class="fa-solid fa-heart"></i>
+                        <i class="fa-solid fa-info"></i>
                     </div>
 
-                    <img src="src/images/dish3.png" class="dish-image" alt="">
+                    <img src="src/images/ave3.png" class="dish-image" alt="">
 
                     <h3 class="dish-title">
                         Lorem Ipsum
@@ -186,29 +195,20 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     </span>
 
-                    <div class="dish-rate">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <span>(500+)</span>
-                    </div>
-
                     <div class="dish-price">
                         <h4>R$20,00</h4>
                         <button class="btn-default">
-                            <i class="fa-solid fa-basket-shopping"></i>
+                            <i class="fa-solid fa-play"></i>
                         </button>
                     </div>
                 </div>
 
                 <div class="dish">
                     <div class="dish-heart">
-                        <i class="fa-solid fa-heart"></i>
+                        <i class="fa-solid fa-info"></i>
                     </div>
 
-                    <img src="src/images/dish4.png" class="dish-image" alt="">
+                    <img src="src/images/ave4.png" class="dish-image" alt="">
 
                     <h3 class="dish-title">
                         Lorem Ipsum
@@ -224,13 +224,12 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
-                        <span>(500+)</span>
                     </div>
 
                     <div class="dish-price">
                         <h4>R$20,00</h4>
                         <button class="btn-default">
-                            <i class="fa-solid fa-basket-shopping"></i>
+                            <i class="fa-solid fa-play"></i>
                         </button>
                     </div>
                 </div>
@@ -304,7 +303,7 @@
 
         <div id="footer_items">
             <span id="copyright">
-                &copy 2024 Larissa Kich
+                &copy 2025 Mateus Correia
             </span>
 
             <div class="social-media-buttons">
@@ -323,6 +322,31 @@
         </div>
     </footer>
     <script src="src/javascript/script.js"></script>
-</body>
+<script>
+function toggleSom(audioId, button) {
+    const audio = document.getElementById(audioId);
+    const icon = button.querySelector("i");
 
+    if (audio.paused) {
+        // Tocar
+        audio.play();
+        icon.classList.remove("fa-circle-play");
+        icon.classList.add("fa-circle-pause");
+
+        // Quando o áudio acabar → voltar para play automaticamente
+        audio.onended = () => {
+            icon.classList.remove("fa-circle-pause");
+            icon.classList.add("fa-circle-play");
+        };
+
+    } else {
+        // Pausar
+        audio.pause();
+        audio.currentTime = 0; // volta para o início
+        icon.classList.remove("fa-circle-pause");
+        icon.classList.add("fa-circle-play");
+    }
+}
+</script>
+</body>
 </html>
