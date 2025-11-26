@@ -59,6 +59,12 @@ section {
     gap: 18px;
 }
 
+.custom-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
 .social-media-buttons a {
     display: flex;
     align-items: center;
@@ -85,4 +91,5 @@ section {
 
 .section-subtitle {
     font-size: 2.1875rem;
+
 } 
