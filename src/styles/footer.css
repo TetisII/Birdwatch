@@ -6,13 +6,13 @@ footer {
 }
 
 fooster > img {
-    width: 100%;
+    width: 100%;       
     min-width: 1000px;
     height: auto;
     display: block;
     object-fit: cover;
-    position: relative;
-    left:50%;
+    position: relative; 
+    left: 50%;
     transform: translateX(-50%);
 }
 
@@ -21,7 +21,7 @@ fooster > img {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     padding: 0px 8% 30px 8%;
@@ -35,10 +35,11 @@ fooster > img {
 
 @media screen and (max-width: 600px) {
     #footer_items {
-        flex-direction: column;
+	    flex-direction: column;
         justify-content: flex-end;
         align-items: center;
         gap: 15px;
         padding-bottom: 20px;
     }
 }
+
