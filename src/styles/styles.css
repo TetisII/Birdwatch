@@ -54,7 +54,7 @@ section {
     cursor: pointer;
     transition: background-color .3s ease;
     position: relative; 
-    z-index: 50;
+    z-index: 10;
 }
 
 .btn-default:hover {
@@ -130,5 +130,6 @@ section {
     gap: 20px;
     margin-top: 20px;
 }
+
 
 
