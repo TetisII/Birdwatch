@@ -15,8 +15,8 @@
 }
 
 #cta .title {
-    font-size: 3.5rem;
-    color: var(--color-neutral-1);
+    font-size: 3.2rem;
+    color: var(--color-neutral-0);
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -25,6 +25,7 @@
 }
 
 #cta .title span {
+    font-size: 3.0rem;
     color: var(--color-primary-6);
     align-items: center;
     justify-content: center;
@@ -35,6 +36,7 @@
 
 #cta .description {
     font-size: 1.2rem;
+    color: var(--color-neutral-0);
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -109,5 +111,6 @@
     }
 
 }
+
 
 
