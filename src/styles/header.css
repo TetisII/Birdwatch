@@ -3,7 +3,9 @@ header {
     padding: 28px 8%;
     position: sticky;
     top: 0;
-    background-color: var(--color-primary-1);
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     z-index: 15;
 }
 
@@ -27,8 +29,12 @@ header {
 
 .nav-item a {
     text-decoration: none;
-    color: #1d1d1dad;
+    color: #f0f0f0;
     font-weight: 600;
+}
+
+.nav-item a:hover {
+    color: var(--color-primary-4);
 }
 
 .nav-item.active a {
@@ -38,6 +44,7 @@ header {
 
 #mobile_btn {
     display: none;
+    color: #f0f0f0;
 }
 
 #mobile_menu {
@@ -77,3 +84,4 @@ header {
     } 
 
 }
+
