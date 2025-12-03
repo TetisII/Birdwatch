@@ -6,7 +6,7 @@
     gap: 48px;
 }
 
-#testimonial_chef {
+#testimonial_house {
     width: 500px;
     height: auto;
 }
@@ -87,4 +87,5 @@
     .feedback {
         flex-direction: column;
     }
+
 } 
