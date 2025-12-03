@@ -29,7 +29,7 @@ html {
 }
 
 body {
-    background-image: url('../images/floor.png');
+    background-image: url('../images/gradient.png');
     background-size: 100%;
     background-position: center bottom;
     object-fit: cover;
@@ -162,4 +162,5 @@ section {
         width: 100%;
     }
 }
+
 
