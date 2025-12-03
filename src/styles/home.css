@@ -21,7 +21,7 @@
     justify-content: center;
     text-align: center;
     position: relative; 
-    z-index: 50;
+    z-index: 10;
 }
 
 #cta .title span {
@@ -30,7 +30,7 @@
     justify-content: center;
     text-align: center;
     position: relative; 
-    z-index: 50;
+    z-index: 10;
 }
 
 #cta .description {
@@ -39,7 +39,7 @@
     justify-content: center;
     text-align: center;
     position: relative; 
-    z-index: 50;
+    z-index: 10;
 }
 
 #cta_buttons {
@@ -109,4 +109,5 @@
     }
 
 }
+
 
