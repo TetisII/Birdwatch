@@ -75,6 +75,38 @@
     gap: 20px;
 }
 
+.mid-layer {
+	position: absolute;
+	z-index: 5;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+    margin-top: -30px;
+	image-rendering: pixelated;
+}
+
+.back-layer {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	image-rendering: pixelated;
+}
+
+.break-layer {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: -30px;
+    image-rendering: pixelated; 
+}
+
 @media screen and (max-width: 1170px) {
     #cards {
         flex-wrap: wrap;
@@ -96,5 +128,6 @@
     }
 
 } 
+
 
 
