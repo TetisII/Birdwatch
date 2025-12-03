@@ -101,7 +101,7 @@
 .break-layer {
     position: relative;
     z-index: 10;
-    width: 120%;
+    width: 119%;
     height: auto;
     display: block;
 	object-fit: cover;
@@ -130,6 +130,7 @@
     }
 
 } 
+
 
 
 
