@@ -30,7 +30,7 @@ html {
 
 body {
     background-image: url('../images/gradient.png');
-    background-size: 100%;
+    background-size: 100% 100%;
     background-position: center bottom;
     object-fit: cover;
     image-rendering: pixelated;
@@ -162,5 +162,6 @@ section {
         width: 100%;
     }
 }
+
 
 
