@@ -63,7 +63,7 @@
         font-size: 2.5rem;
     }
 
-    #testimonial_chef {
+    #testimonial_house {
         display: none;
     }
 
@@ -86,7 +86,12 @@
 
     .feedback {
         flex-direction: column;
+        text-align: center;
     }
 
+    .feedback-content p {
+        justify-content: center;
+    }
 } 
+
 
