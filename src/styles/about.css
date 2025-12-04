@@ -6,7 +6,7 @@
     gap: 48px;
 }
 
-#testimonial_house {
+#about_house {
     width: 480px;
     height: auto;
 }
@@ -63,7 +63,7 @@
         font-size: 2.5rem;
     }
 
-    #testimonial_house {
+    #about_house {
         display: none;
     }
 
@@ -93,6 +93,7 @@
         justify-content: center;
     }
 } 
+
 
 
 
