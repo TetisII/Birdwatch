@@ -38,7 +38,7 @@ header {
 }
 
 .nav-item.active a {
-    color: var(--color-neutral-1);
+    color: var(--color-neutral-0);
     border-bottom: 3px solid var(--color-primary-4);
 }
 
