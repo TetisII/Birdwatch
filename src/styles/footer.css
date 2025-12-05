@@ -1,5 +1,7 @@
 footer {
+    background-color: transparent;
     overflow-x: hidden;
+    position: relative;
     padding: 0;
 }
 
@@ -41,5 +43,6 @@ fooster > img {
         padding-bottom: 20px;
     }
 }
+
 
 
