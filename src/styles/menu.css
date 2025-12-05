@@ -5,6 +5,10 @@
     justify-content: center;
     min-height: 100vh;
 	padding: 0;
+	position: relative;
+    z-index: -1;
+    background-image: url('../images/floor.png');
+    background-repeat: repeat;
 }
 
 /* ===== CARDS ===== */
@@ -156,6 +160,7 @@
     }
 
 } 
+
 
 
 
