@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+	padding: 0;
 }
 
 #cards {
@@ -12,6 +13,8 @@
     justify-content: center;
     gap: 24px;
     margin-top: 32px;
+	padding-left: 8%;
+    padding-right: 8%;
 }
 
 .card {
@@ -101,7 +104,7 @@
 .break-layer {
     position: relative;
     z-index: 10;
-    width: 119%;
+    width: 100%;
     height: auto;
     display: block;
 	object-fit: cover;
@@ -130,6 +133,7 @@
     }
 
 } 
+
 
 
 
