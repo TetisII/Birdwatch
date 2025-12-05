@@ -7,6 +7,7 @@
 	padding: 0;
 }
 
+/* ===== CARDS ===== */
 #cards {
     width: 100%;
     display: flex;
@@ -79,39 +80,61 @@
     gap: 20px;
 }
 
-.back-layer {
-	position: absolute;
-	z-index: -10;
-	top: 0;
-	left: 0;
+/* ===== CENÁRIO ===== */
+.cenario {
+	position: relative;
 	width: 100%;
 	height: auto;
-	object-fit: cover;
-	image-rendering: pixelated;
+	z-index: -5;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
 }
 
-.mid-layer {
+.layer {
 	position: absolute;
+	width: 100%;
+	height: auto;
+	image-rendering: pixelated;
+	pointer-events: none;
+}
+
+.s-stars {
+	z-index: 1;
+	bottom: auto;
+}
+
+.s-clouds {
+	z-index: 2;
+	bottom: 50px;
+	opacity: 0.3;
+}
+
+.s-haze {
+	z-index: 3;
+	bottom: auto;
+	margin-bottom: 100px;
+}
+
+.s-mountains {
+	z-index: 4;
+	bottom: auto;
+	margin-bottom: 50px;
+}
+
+.s-trees {
 	z-index: 5;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: auto;
-    margin-top: -30px;
-	image-rendering: pixelated;
+	bottom: auto;
+	margin-bottom: 60px;
 }
 
-.break-layer {
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    height: auto;
-    display: block;
-	object-fit: cover;
-    margin-top: -30px;
-    image-rendering: pixelated; 
+.s-farm {
+	z-index: 6;
+	position: relative;
+	bottom: auto;
 }
 
+/* ===== MOBILE ===== */
 @media screen and (max-width: 1170px) {
     #cards {
         flex-wrap: wrap;
@@ -133,6 +156,7 @@
     }
 
 } 
+
 
 
 
