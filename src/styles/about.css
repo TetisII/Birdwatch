@@ -4,10 +4,6 @@
     align-items: center;
     justify-content: center;
     gap: 48px;
-    position: relative;
-    z-index: -1;
-    background-image: url('../images/floor.png');
-    background-repeat: repeat;
 }
 
 #about_house {
