@@ -53,6 +53,7 @@
     color: var(--color-primary-6);
 }
 
+/* ===== MOBILE ===== */
 @media screen and (max-width: 1170px) {
     #about {
         flex-direction: column;
@@ -93,6 +94,7 @@
         justify-content: center;
     }
 } 
+
 
 
 
