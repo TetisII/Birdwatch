@@ -1,8 +1,10 @@
 footer {
-    background-color: transparent;
     overflow-x: hidden;
-    position: relative;
     padding: 0;
+	position: relative;
+    z-index: -1;
+    background-image: url('../images/floor.png');
+    background-repeat: repeat;
 }
 
 fooster > img {
@@ -43,4 +45,5 @@ fooster > img {
         padding-bottom: 20px;
     }
 }
+
 
