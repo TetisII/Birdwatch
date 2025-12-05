@@ -33,6 +33,7 @@ fooster > img {
     font-weight: 500;
 }
 
+/* ===== MOBILE ===== */
 @media screen and (max-width: 600px) {
     #footer_items {
 	    flex-direction: column;
@@ -42,3 +43,4 @@ fooster > img {
         padding-bottom: 20px;
     }
 }
+
