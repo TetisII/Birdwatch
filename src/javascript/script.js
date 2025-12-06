@@ -40,13 +40,13 @@ $(document).ready(function() {
         distance: '20%'
     });
 
-    ScrollReveal().reveal('.dish', {
+    ScrollReveal().reveal('.card', {
         origin: 'left',
         duration: 2000,
         distance: '20%'
     });
 
-    ScrollReveal().reveal('#testimonial_chef', {
+    ScrollReveal().reveal('#about_house', {
         origin: 'left',
         duration: 1000,
         distance: '20%'
@@ -60,8 +60,7 @@ $(document).ready(function() {
 
 });
 
-/* === SESSÃO DO QUIZ === */
-
+/* === SCRIPT DO QUIZ === */
 const avesQuiz = [
   { nome: "Bem-te-vi", audio: "bem.mp3" },
   { nome: "Anu-branco", audio: "anu.mp3" },
@@ -91,10 +90,10 @@ function abrirQuiz() {
 
   quizSection.style.display = 'block';
 
-  // Delay para garantir que o navegador renderize a seção.
+// Delay para renderizar
   setTimeout(() => {
     iniciarQuiz();
-    // Rolagem suave para a seção
+// Rolagem suave
     quizSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, 80);
 }
@@ -106,7 +105,7 @@ function fecharQuiz() {
   quizSection.style.display = 'none';
 }
 
-// Inicializar rodada
+// Iniciar rodada
 function iniciarQuiz() {
   const feedback = document.getElementById('feedbackQuiz');
   const btn1 = document.getElementById('opcao1');
@@ -125,7 +124,7 @@ function iniciarQuiz() {
   // Seleção aleatória
   const copia = embaralhar(avesQuiz);
   aveCorreta = copia[0];
-  const falsa = copia[1] || copia[0]; // fallback
+  const falsa = copia[1] || copia[0];
 
   // Embaralhamento das opções
   const opcoes = embaralhar([aveCorreta.nome, falsa.nome]);
@@ -141,17 +140,13 @@ function iniciarQuiz() {
   audioEl.src = `src/audios/${aveCorreta.audio}`;
   audioEl.load();
 
-  // Guardar referência global
   audioQuizEl = audioEl;
 }
 
-// Valor via dataset
 function verificarResposta(valorBruto) {
   const feedback = document.getElementById('feedbackQuiz');
   if (!feedback) return console.error('verificarResposta: feedbackQuiz não encontrado.');
 
-  // Valor bruto
-  // Normalizar: trim + lowercase
   const resposta = String(valorBruto).trim().toLowerCase();
   const correta = aveCorreta ? String(aveCorreta.nome).trim().toLowerCase() : null;
 
@@ -173,7 +168,7 @@ function verificarResposta(valorBruto) {
       console.warn('Erro ao reproduzir audio de acerto:', err);
     });
 
-    // Interromper o áudio do quiz se estiver tocando
+    // Interromper o áudio do quiz
     if (audioQuizEl && !audioQuizEl.paused) {
       audioQuizEl.pause();
       audioQuizEl.currentTime = 0;
@@ -188,3 +183,154 @@ function verificarResposta(valorBruto) {
 function reiniciarQuiz() {
   iniciarQuiz();
 }
+
+/* ===== BANCO DE DADOS ===== */
+const avesData = [
+    {
+        nome: "Anu-Branco",
+        cientifico: "Guira Guira",
+        img: "src/images/ave1.png",
+        audio: "src/audios/anu.mp3",
+        wiki: "https://www.wikiaves.com.br/wiki/anu-branco",
+        desc: "Carismático, bastante barulhento e de aparência excêntrica. Possui uma plumagem branco-amarelada, que contrasta com a cauda e asas escuras e uma crista alaranjada e sempre levantada.
+    },
+    {
+        nome: "Pica-pau-verde-barrado",
+        cientifico: "Colaptes melanochloros",
+        img: "src/images/ave2.png",
+        audio: "src/audios/picas.mp3",
+        wiki: "https://www.wikiaves.com.br/wiki/pica-pau-verde-barrado",
+        desc: "Pica-pau de tamanho médio de cor amarelo-esverdeado. Possui barrinhas pretas nas costas, asas e cauda, e pintas pretas no peito. Os machos possuem pequeno bigode vermelho na base do bico."
+    },
+    {
+        nome: "Canário-da-terra",
+        cientifico: "Sicalis flaveola",
+        img: "src/images/ave3.png",
+        audio: "src/audios/canas.mp3",
+        wiki: "https://www.wikiaves.com.br/wiki/canario-da-terra",
+        desc: "Os machos são amarelos com a testa laranja, alguns possuem tons marrom nas costas e asas. Já as fêmeas são mais opacas que os machos, apresentando tons mais claros."
+    },
+    {
+        nome: "Sabiá-laranjeira",
+        cientifico: "Turdus rufiventris",
+        img: "src/images/ave4.png",
+        audio: "src/audios/sabia.mp3",
+        wiki: "https://www.wikiaves.com.br/wiki/sabia-laranjeira",
+        desc: "Seu corpo é quase totalmente amarronzado, enquanto a barriga é laranja com a garganta pálida e listrada."
+    },
+    {
+        nome: "Bem-te-vi",
+        cientifico: "Pitangus sulphuratus",
+        img: "src/images/ave5.png",
+        audio: "src/audios/bem.mp3",
+        wiki: "https://www.wikiaves.com.br/wiki/bem-te-vi",
+        desc: "A barriga é amarela com cauda de asas marrom-alaranjado. Seu canto dá origem ao nome “bem-te-vi”. Alimenta-se de uma variedade de animais e plantas, incluindo insetos, lagartos e frutas."
+    },
+    {
+        nome: "Corruíra",
+        cientifico: "Troglodytes musculus",
+        img: "src/images/ave6.png",
+        audio: "src/audios/cor.mp3",
+        wiki: "https://www.wikiaves.com.br/wiki/corruira",
+        desc: "Comum de parques e áreas urbanas. A plumagem é completamente marrom, possuindo algumas listras escuras nas pontas da asa e da cauda."
+    },
+    {
+        nome: "Anu-preto",
+        cientifico: "Crotophaga ani",
+        img: "src/images/ave7.png",
+        audio: "src/audios/anu2.mp3",
+        wiki: "https://www.wikiaves.com.br/wiki/anu-preto",
+        desc: "Ave preta de cauda longa e bico grande. Vive em bandos e possui um canto estridente, parecido com de gaviões, que usa para confundi-los e avisar o bando do perigo."
+    },
+    {
+        nome: "Lavadeira-mascarada",
+        cientifico: "Fluvicola nengeta",
+        img: "src/images/ave8.png",
+        audio: "src/audios/lava.mp3",
+        wiki: "https://www.wikiaves.com.br/wiki/lavadeira-mascarada",
+        desc: "Papa-moscas de tamanho médio, geralmente encontrado próximo d'água em áreas urbanas. Possui uma faixa preta nos olhos, como uma mascara, que contrasta sua cor esbranquiçada."
+    }
+];
+/* ===== CONTROLADOR CARDS ===== */
+let indiceAtual = 0;
+const itensPorPagina = 4; // Quantidade de Cards por vez
+
+function carrgarMaisAves() {
+    const container = document.getElementById("cards");
+    const btnContainer = document.getElementById("load-more");
+
+    const total = avesData.length;
+    const limite = Math.min(indiceAtual + itensPorPagina, total);
+
+    let htmlTemp = "";
+
+    for (let i = indiceAtual; i < limite; i++) {
+        const ave = avesData[i];
+        const audioId = `somAve${i}`;
+        
+/* ===== LAYOUT CARDS ===== */
+htmlTemp += `
+    <div class="card">
+        <div class="card-info" 
+		    onclick="window.open('${ave.wiki}', '_blank')"
+		    style="cursor:pointer;">
+            <img src="src/images/exclamation.png" class="icon-img" alt="Info">
+        </div>
+
+            <img src="${ave.img}" class="card-image" alt="${ave.nome}">
+
+        <h3 class="card-title"
+			style="font-size: 1.4rem; font-weight: bold; text-align:center; margin-bottom: -15px;">
+			${ave.nome}
+	    </h3>
+
+        <span style="font-size: 0.85rem; color: #888; font-style: italic; display: block; text-align:center; margin-bottom: -6px;">
+            ${ave.cientifico}
+        </span>
+
+        <div style="text-align:center; cursor:pointer; color:#0077cc; margin-bottom: -15px;"
+            onclick="
+                const desc = this.nextElementSibling;
+                if (desc.style.display === 'block') {
+                    desc.style.display = 'none';
+                    this.style.color = '#0077cc'; 
+                } else {
+                    desc.style.display = 'block';
+                    this.style.color = '#888'; 
+                }
+            ">
+            Descrição
+        </div>
+
+        <div style="display:none; font-size:0.95rem; color:#444; text-align:center; margin-bottom: -10px;">
+            ${ave.desc}
+        </div>
+
+        <audio id="${audioId}">
+            <source src="${ave.audio}" type="audio/mpeg">
+        </audio>
+        
+        <div class="card-audio">
+            <button class="btn-default" 
+                    onclick="toggleSom('${audioId}', this)"
+                    style="margin-top:10px;"> 
+                    <i class="fa-solid fa-circle-play"></i>
+                <span style="font-weight:600; margin-left:4px;">Ouvir</span>
+            </button>
+        </div>
+    </div>
+    `;
+}
+
+        container.insertAdjacentHTML('beforeend', htmlTemp);
+        indiceAtual = limite;
+
+        if (indiceAtual >= total) {
+        if(btnContainer) btnContainer.style.display = "none";
+    }
+}
+
+/* ===== INICIAR SCRIPT ===== */
+document.addEventListener("DOMContentLoaded", () => {
+    carregarMaisAves();
+});
