@@ -184,15 +184,17 @@ function reiniciarQuiz() {
   iniciarQuiz();
 }
 
-/* ===== BANCO DE DADOS ===== */
+// =============================================================
+// BANCO DE DADOS DAS AVES
+// =============================================================
 const avesData = [
     {
-        nome: "Anu-Branco",
-        cientifico: "Guira Guira",
+        nome: "Anu-branco",
+        cientifico: "Guira guira",
         img: "src/images/ave1.png",
         audio: "src/audios/anu.mp3",
         wiki: "https://www.wikiaves.com.br/wiki/anu-branco",
-        desc: "Carismático, bastante barulhento e de aparência excêntrica. Possui uma plumagem branco-amarelada, que contrasta com a cauda e asas escuras e uma crista alaranjada e sempre levantada.
+        desc: "Carismático, bastante barulhento e de aparência excêntrica. Possui uma plumagem branco-amarelada, que contrasta com a cauda e asas escuras e uma crista alaranjada e sempre levantada."
     },
     {
         nome: "Pica-pau-verde-barrado",
@@ -251,14 +253,18 @@ const avesData = [
         desc: "Papa-moscas de tamanho médio, geralmente encontrado próximo d'água em áreas urbanas. Possui uma faixa preta nos olhos, como uma mascara, que contrasta sua cor esbranquiçada."
     }
 ];
-/* ===== CONTROLADOR CARDS ===== */
+
+// =============================================================
+// LÓGICA DE PAGINAÇÃO E GERAÇÃO DE CARDS
+// =============================================================
+
 let indiceAtual = 0;
-const itensPorPagina = 4; // Quantidade de Cards por vez
+const itensPorPagina = 4; // Mude para 8 se quiser mostrar todos de uma vez
 
-function carrgarMaisAves() {
+function carregarMaisAves() {
     const container = document.getElementById("cards");
-    const btnContainer = document.getElementById("load-more");
-
+    const btnContainer = document.getElementById("load-more-container");
+    
     const total = avesData.length;
     const limite = Math.min(indiceAtual + itensPorPagina, total);
 
@@ -267,70 +273,121 @@ function carrgarMaisAves() {
     for (let i = indiceAtual; i < limite; i++) {
         const ave = avesData[i];
         const audioId = `somAve${i}`;
-        
-/* ===== LAYOUT CARDS ===== */
-htmlTemp += `
-    <div class="card">
-        <div class="card-info" 
-		    onclick="window.open('${ave.wiki}', '_blank')"
-		    style="cursor:pointer;">
-            <img src="src/images/exclamation.png" class="icon-img" alt="Info">
-        </div>
+
+        htmlTemp += `
+        <div class="card">
+            <div class="card-info" 
+			onclick="window.open('${ave.wiki}', '_blank')"
+			style="cursor:pointer;">
+                <img src="src/images/exclamation.png" class="icon-img" alt="Info">
+            </div>
 
             <img src="${ave.img}" class="card-image" alt="${ave.nome}">
 
-        <h3 class="card-title"
+            <h3 class="dish-title"
 			style="font-size: 1.4rem; font-weight: bold; text-align:center; margin-bottom: -15px;">
 			${ave.nome}
 	    </h3>
 
-        <span style="font-size: 0.85rem; color: #888; font-style: italic; display: block; text-align:center; margin-bottom: -6px;">
-            ${ave.cientifico}
-        </span>
+            <span style="font-size: 0.85rem; color: #888; font-style: italic; display: block; text-align:center; margin-bottom: -6px;">
+                ${ave.cientifico}
+            </span>
 
-        <div style="text-align:center; cursor:pointer; color:#0077cc; margin-bottom: -15px;"
-            onclick="
-                const desc = this.nextElementSibling;
-                if (desc.style.display === 'block') {
-                    desc.style.display = 'none';
-                    this.style.color = '#0077cc'; 
-                } else {
-                    desc.style.display = 'block';
-                    this.style.color = '#888'; 
-                }
-            ">
-            Descrição
-        </div>
+            <div style="text-align:center; cursor:pointer; color:#0077cc; margin-bottom: -15px;"
+                 onclick="
+                    const desc = this.nextElementSibling;
+                    if (desc.style.display === 'block') {
+                        desc.style.display = 'none';
+                        this.style.color = '#0077cc'; 
+                    } else {
+                        desc.style.display = 'block';
+                        this.style.color = '#888'; 
+                    }
+                 ">
+                Descrição
+            </div>
 
-        <div style="display:none; font-size:0.95rem; color:#444; text-align:center; margin-bottom: -10px;">
-            ${ave.desc}
-        </div>
+<div style="display:none; font-size:0.95rem; color:#444; text-align:center; margin-bottom: -10px;">
+                ${ave.desc}
+            </div>
 
-        <audio id="${audioId}">
-            <source src="${ave.audio}" type="audio/mpeg">
-        </audio>
-        
-        <div class="card-audio">
-            <button class="btn-default" 
-                    onclick="toggleSom('${audioId}', this)"
-                    style="margin-top:10px;"> 
+            <audio id="${audioId}">
+                <source src="${ave.audio}" type="audio/mpeg">
+            </audio>
+
+<div class="card-audio">
+                <button class="btn-default" 
+                        onclick="toggleSom('${audioId}', this)"
+                        style="margin-top:10px;"> 
                     <i class="fa-solid fa-circle-play"></i>
-                <span style="font-weight:600; margin-left:4px;">Ouvir</span>
-            </button>
+                    <span style="font-weight:600; margin-left:4px;">Ouvir</span>
+                </button>
+            </div>
         </div>
-    </div>
-    `;
-}
+        `;
+    }
 
-        container.insertAdjacentHTML('beforeend', htmlTemp);
-        indiceAtual = limite;
+    container.insertAdjacentHTML('beforeend', htmlTemp);
+    indiceAtual = limite;
 
-        if (indiceAtual >= total) {
+    // Esconde o botão se acabaram as aves
+    if (indiceAtual >= total) {
         if(btnContainer) btnContainer.style.display = "none";
     }
 }
 
-/* ===== INICIAR SCRIPT ===== */
+// =============================================================
+// FUNÇÕES AUXILIARES (DESCRIÇÃO E SOM)
+// =============================================================
+
+function toggleDesc(elemento) {
+    const desc = elemento.nextElementSibling;
+    if (desc.style.display === 'block') {
+        desc.style.display = 'none';
+        elemento.style.color = '#0077cc';
+    } else {
+        desc.style.display = 'block';
+        elemento.style.color = '#888';
+    }
+}
+
+function toggleSom(audioId, button) {
+    const audio = document.getElementById(audioId);
+    const icon = button.querySelector("i");
+    const label = button.querySelector("span");
+
+    // Pausa todos os outros áudios antes de tocar o novo (Opcional, mas recomendado)
+    document.querySelectorAll('audio').forEach(el => {
+        if(el.id !== audioId) {
+            el.pause();
+            el.currentTime = 0;
+            // Reseta ícones dos outros
+            // (Isso exigiria buscar o botão correspondente, mas o básico funciona)
+        }
+    });
+
+    if (audio.paused) {
+        audio.play();
+        icon.classList.remove("fa-circle-play");
+        icon.classList.add("fa-circle-pause");
+        label.textContent = "Pausar";
+
+        audio.onended = () => {
+            icon.classList.remove("fa-circle-pause");
+            icon.classList.add("fa-circle-play");
+            label.textContent = "Ouvir";
+        };
+    } else {
+        audio.pause();
+        audio.currentTime = 0;
+        icon.classList.remove("fa-circle-pause");
+        icon.classList.add("fa-circle-play");
+        label.textContent = "Ouvir";
+    }
+}
+
+// Inicia o carregamento ao abrir a página
 document.addEventListener("DOMContentLoaded", () => {
     carregarMaisAves();
 });
+
