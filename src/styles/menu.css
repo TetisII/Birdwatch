@@ -104,7 +104,7 @@
 
 .s-stars {
 	z-index: 1;
-	bottom: auto;
+	top: 20px;
 }
 
 .s-clouds {
@@ -159,6 +159,7 @@
     }
 
 } 
+
 
 
 
