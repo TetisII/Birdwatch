@@ -274,10 +274,10 @@ function carregarMaisAves() {
 
             <img src="${ave.img}" class="card-image" alt="${ave.nome}">
 
-            <h3 class="dish-title"
-			style="font-size: 1.4rem; font-weight: bold; text-align:center; margin-bottom: -15px;">
-			${ave.nome}
-	    </h3>
+            <h3 class="card-title"
+				style="font-size: 1.4rem; font-weight: bold; text-align:center; margin-bottom: -15px;">
+				${ave.nome}
+	 	  	</h3>
 
             <span style="font-size: 0.85rem; color: #888; font-style: italic; display: block; text-align:center; margin-bottom: -6px;">
                 ${ave.cientifico}
@@ -325,7 +325,7 @@ function carregarMaisAves() {
     }
 }
 
-/* ===== AUDIOPLAY ===== */
+/* ===== DESCRIÇÃO ===== */
 function toggleDesc(elemento) {
     const desc = elemento.nextElementSibling;
     if (desc.style.display === 'block') {
@@ -337,6 +337,7 @@ function toggleDesc(elemento) {
     }
 }
 
+/* ===== AUDIOPLAY ===== */
 function toggleSom(audioId, button) {
     const audio = document.getElementById(audioId);
     const icon = button.querySelector("i");
@@ -373,5 +374,6 @@ function toggleSom(audioId, button) {
 document.addEventListener("DOMContentLoaded", () => {
     carregarMaisAves();
 });
+
 
 
