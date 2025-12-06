@@ -60,7 +60,7 @@ $(document).ready(function() {
 
 });
 
-/* === SCRIPT DO QUIZ === */
+/* ===== QUIZ ===== */
 const avesQuiz = [
   { nome: "Bem-te-vi", audio: "bem.mp3" },
   { nome: "Anu-branco", audio: "anu.mp3" },
@@ -90,10 +90,8 @@ function abrirQuiz() {
 
   quizSection.style.display = 'block';
 
-// Delay para renderizar
   setTimeout(() => {
     iniciarQuiz();
-// Rolagem suave
     quizSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, 80);
 }
@@ -117,7 +115,6 @@ function iniciarQuiz() {
     return;
   }
 
-  // Limpar feedback visual
   feedback.textContent = '';
   feedback.style.color = '';
 
@@ -129,13 +126,11 @@ function iniciarQuiz() {
   // Embaralhamento das opções
   const opcoes = embaralhar([aveCorreta.nome, falsa.nome]);
 
-  // Atualizar botões
   btn1.textContent = opcoes[0];
   btn1.setAttribute('data-value', opcoes[0].trim());
   btn2.textContent = opcoes[1];
   btn2.setAttribute('data-value', opcoes[1].trim());
 
-  // Atualizar elemento de áudio
   audioEl.pause();
   audioEl.src = `src/audios/${aveCorreta.audio}`;
   audioEl.load();
@@ -184,9 +179,7 @@ function reiniciarQuiz() {
   iniciarQuiz();
 }
 
-// =============================================================
-// BANCO DE DADOS DAS AVES
-// =============================================================
+/* ===== BANCO DE DADOS ===== */
 const avesData = [
     {
         nome: "Anu-branco",
@@ -254,12 +247,9 @@ const avesData = [
     }
 ];
 
-// =============================================================
-// LÓGICA DE PAGINAÇÃO E GERAÇÃO DE CARDS
-// =============================================================
-
+/* ===== CONTROLADOR DOS CARDS ===== */
 let indiceAtual = 0;
-const itensPorPagina = 4; // Mude para 8 se quiser mostrar todos de uma vez
+const itensPorPagina = 4; // Limite de Cards por vez
 
 function carregarMaisAves() {
     const container = document.getElementById("cards");
@@ -330,16 +320,12 @@ function carregarMaisAves() {
     container.insertAdjacentHTML('beforeend', htmlTemp);
     indiceAtual = limite;
 
-    // Esconde o botão se acabaram as aves
     if (indiceAtual >= total) {
         if(btnContainer) btnContainer.style.display = "none";
     }
 }
 
-// =============================================================
-// FUNÇÕES AUXILIARES (DESCRIÇÃO E SOM)
-// =============================================================
-
+/* ===== AUDIOPLAY ===== */
 function toggleDesc(elemento) {
     const desc = elemento.nextElementSibling;
     if (desc.style.display === 'block') {
@@ -356,13 +342,10 @@ function toggleSom(audioId, button) {
     const icon = button.querySelector("i");
     const label = button.querySelector("span");
 
-    // Pausa todos os outros áudios antes de tocar o novo (Opcional, mas recomendado)
     document.querySelectorAll('audio').forEach(el => {
         if(el.id !== audioId) {
             el.pause();
             el.currentTime = 0;
-            // Reseta ícones dos outros
-            // (Isso exigiria buscar o botão correspondente, mas o básico funciona)
         }
     });
 
@@ -390,4 +373,5 @@ function toggleSom(audioId, button) {
 document.addEventListener("DOMContentLoaded", () => {
     carregarMaisAves();
 });
+
 
