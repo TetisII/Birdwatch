@@ -163,7 +163,7 @@
 				target="_blank"
 				style="text-decoration: none;">
                 Faça sua avaliação
-            </a
+			</a>
             </div>
         </section>
     </main>
@@ -190,7 +190,7 @@
     </audio>
 
     <!-- Opções -->
-    <div style="display:flex; justify-content:center; gap:15px;"margin-top: 30px;">
+    <div style="display:flex; justify-content:center; gap:15px; margin-top: 5px;">
         <button onclick="verificarResposta(this.textContent)" id="opcao1" class="btn-default">Opção 1</button>
         <button onclick="verificarResposta(this.textContent)" id="opcao2" class="btn-default">Opção 2</button>
     </div>
@@ -238,78 +238,8 @@
         </div>
     </footer>
 
-<!-- ====================== SCRIPT AUDIOPLAY ====================== -->
+<!-- ====================== SCRIPT ====================== -->
 <script src="src/javascript/script.js"></script>
-<script>
-function toggleSom(audioId, button) {
-    const audio = document.getElementById(audioId);
-    const icon = button.querySelector("i");
-
-    if (audio.paused) {
-        // Tocar
-        audio.play();
-        icon.classList.remove("fa-circle-play");
-        icon.classList.add("fa-circle-pause");
-
-        // Quando o áudio acabar → voltar para play automaticamente
-        audio.onended = () => {
-            icon.classList.remove("fa-circle-pause");
-            icon.classList.add("fa-circle-play");
-        };
-
-    } else {
-        // Pausar
-        audio.pause();
-        audio.currentTime = 0; // volta para o início
-        icon.classList.remove("fa-circle-pause");
-        icon.classList.add("fa-circle-play");
-    }
-}
-</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
