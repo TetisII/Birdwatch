@@ -74,8 +74,8 @@ const avesData = [
     {
         nome: "Pica-pau-verde-barrado",
         cientifico: "Colaptes melanochloros",
-        img: "src/images/ave2.png",
-        audio: "src/audios/picas.mp3",
+        img: "src/images/pica-pau-ver-barrado.png",
+        audio: "src/audios/pica-pau-verde-barrado_1.mp3",
         wiki: "https://www.wikiaves.com.br/wiki/pica-pau-verde-barrado",
         desc: "Pica-pau de tamanho médio de cor amarelo-esverdeado. Possui barrinhas pretas nas costas, asas e cauda, e pintas pretas no peito. Os machos possuem pequeno bigode vermelho na base do bico."
     },
@@ -466,6 +466,7 @@ function reiniciarQuiz() {
 document.addEventListener("DOMContentLoaded", () => {
     carregarMaisAves();
 });
+
 
 
 
