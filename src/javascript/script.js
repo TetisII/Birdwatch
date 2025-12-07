@@ -65,8 +65,8 @@ const avesData = [
     {
         nome: "Anu-branco",
         cientifico: "Guira guira",
-        img: "src/images/ave1.png",
-        audio: "src/audios/anu.mp3",
+        img: "src/images/anu-branco.png",
+        audio: "src/audios/anu-branco_1.mp3",
 		audioChamado: "src/audios/anu-branco_2.mp3",
         wiki: "https://www.wikiaves.com.br/wiki/anu-branco",
         desc: "Carismático, bastante barulhento e de aparência excêntrica. Possui uma plumagem branco-amarelada, que contrasta com a cauda e asas escuras e uma crista alaranjada e sempre levantada."
@@ -76,7 +76,6 @@ const avesData = [
         cientifico: "Colaptes melanochloros",
         img: "src/images/ave2.png",
         audio: "src/audios/picas.mp3",
-		audioChamado: "src/audios/pica-pau-verde-barrado_2.mp3",
         wiki: "https://www.wikiaves.com.br/wiki/pica-pau-verde-barrado",
         desc: "Pica-pau de tamanho médio de cor amarelo-esverdeado. Possui barrinhas pretas nas costas, asas e cauda, e pintas pretas no peito. Os machos possuem pequeno bigode vermelho na base do bico."
     },
@@ -85,7 +84,6 @@ const avesData = [
         cientifico: "Sicalis flaveola",
         img: "src/images/ave3.png",
         audio: "src/audios/canas.mp3",
-		audioChamado: "src/audios/canário-da-terra_2.mp3",
         wiki: "https://www.wikiaves.com.br/wiki/canario-da-terra",
         desc: "Os machos são amarelos com a testa laranja, alguns possuem tons marrom nas costas e asas. Já as fêmeas são mais opacas que os machos, apresentando tons mais claros."
     },
@@ -94,14 +92,13 @@ const avesData = [
         cientifico: "Turdus rufiventris",
         img: "src/images/ave4.png",
         audio: "src/audios/sabia.mp3",
-		audioChamado: "src/audios/sabiá-laranjeira_2.mp3",
         wiki: "https://www.wikiaves.com.br/wiki/sabia-laranjeira",
         desc: "Seu corpo é quase totalmente amarronzado, enquanto a barriga é laranja com a garganta pálida e listrada."
     },
     {
         nome: "Bem-te-vi",
         cientifico: "Pitangus sulphuratus",
-        img: "src/images/ave5.png",
+        img: "src/images/bem-te-vi.png",
         audio: "src/audios/bem-te-vi_1.mp3",
 		audioChamado: "src/audios/bem-te-vi_2.mp3",
         wiki: "https://www.wikiaves.com.br/wiki/bem-te-vi",
@@ -110,8 +107,8 @@ const avesData = [
     {
         nome: "Corruíra",
         cientifico: "Troglodytes musculus",
-        img: "src/images/ave6.png",
-        audio: "src/audios/cor.mp3",
+        img: "src/images/corruíra.png",
+        audio: "src/audios/corruíra_1.mp3",
 		audioChamado: "src/audios/corruíra_2.mp3",
         wiki: "https://www.wikiaves.com.br/wiki/corruira",
         desc: "Comum de parques e áreas urbanas. A plumagem é completamente marrom, possuindo algumas listras escuras nas pontas da asa e da cauda."
@@ -119,9 +116,8 @@ const avesData = [
     {
         nome: "Anu-preto",
         cientifico: "Crotophaga ani",
-        img: "src/images/ave7.png",
-        audio: "src/audios/anu2.mp3",
-		audioChamado: "src/audios/anu-preto_2.mp3",
+        img: "src/images/anu-preto.png",
+        audio: "src/audios/anu-preto_1.mp3",
         wiki: "https://www.wikiaves.com.br/wiki/anu-preto",
         desc: "Ave preta de cauda longa e bico grande. Vive em bandos e possui um canto estridente, parecido com de gaviões, que usa para confundi-los e avisar o bando do perigo."
     },
@@ -129,11 +125,28 @@ const avesData = [
         nome: "Lavadeira-mascarada",
         cientifico: "Fluvicola nengeta",
         img: "src/images/lavadeira-mascarada.png",
-        audio: "src/audios/lava.mp3",
+        audio: "src/audios/lavadeira-mascarada_1.mp3",
 		audioChamado: "src/audios/lavadeira-mascarada_2.mp3",
         wiki: "https://www.wikiaves.com.br/wiki/lavadeira-mascarada",
         desc: "Papa-moscas de tamanho médio, geralmente encontrado próximo d'água em áreas urbanas. Possui uma faixa preta nos olhos, como uma mascara, que contrasta sua cor esbranquiçada."
-    }
+    },
+	{
+        nome: "Quero-quero",
+        cientifico: "Vanellus chilensis",
+        img: "src/images/quero-quero.png",
+        audio: "src/audios/quero-quero_1.mp3",
+        wiki: "https://www.wikiaves.com.br/wiki/quero-quero",
+        desc: "Conhecida popularmente pela sua agressividade. Possui o peito preto, barriga branca, ombros marrom brilhoso e o corpo do corpo cinza. Vive em áreas abertas, alagadas ou às vezes em manguezais."
+    },
+	{
+        nome: "Sabiá-barranco",
+        cientifico: "Turdus leucomelas",
+        img: "src/images/sabiá-barranco.png",
+        audio: "src/audios/sabiá-barranco_1.mp3",
+		audioChamado: "src/audios/sabiá-barranco_2.mp3",
+        wiki: "https://www.wikiaves.com.br/wiki/sabia-barranco",
+        desc: "Sabiá muito comum nas áreas urbanas, principalmente próximo de árvores frutificando. Não possui características marcantes, além de ser completamente marrom e com a cabeça acinzentada."
+    },
 ];
 
 /* ===== CONTROLADOR DOS CARDS ===== */
@@ -297,13 +310,15 @@ function restaurarBotaoOriginal(botao) {
 /* ===== QUIZ ===== */
 const avesQuiz = [
   { nome: "Bem-te-vi", audio: "bem-te-vi_1.mp3", audioChamado: "bem-te-vi_2.mp3" },
-  { nome: "Anu-branco", audio: "anu.mp3" },
-  { nome: "Anu-preto", audio: "anu2.mp3" },
+  { nome: "Anu-branco", audio: "anu-branco_1.mp3", audioChamado: "anu-branco_2.mp3" },
+  { nome: "Anu-preto", audio: "anu-preto_1.mp3" },
   { nome: "Canário-da-terra", audio: "canas.mp3" },
-  { nome: "Corruíra", audio: "cor.mp3" },
-  { nome: "Lavadeira-mascarada", audio: "lava.mp3" },
+  { nome: "Corruíra", audio: "coruíra_1.mp3", audioChamado: "corruíra_2.mp3" },
+  { nome: "Lavadeira-mascarada", audio: "lavadeira-mascarada_1.mp3", audioChamado: "lavadeira-mascarada_2.mp3" },
   { nome: "Pica-pau-verde-barrado", audio: "picas.mp3" },
-  { nome: "Sabiá-laranjeira", audio: "sabia.mp3" }
+  { nome: "Sabiá-laranjeira", audio: "sabia.mp3" },
+  { nome: "Quero-quero", audio: "quero-quero_1.mp3" },
+  { nome: "Sabiá-barranco", audio: "sabiá-barranco_1.mp3", audioChamado: "sabiá-barranco_2.mp3"}
 ];
 
 let aveCorreta = null;
@@ -432,6 +447,7 @@ function reiniciarQuiz() {
 document.addEventListener("DOMContentLoaded", () => {
     carregarMaisAves();
 });
+
 
 
 
