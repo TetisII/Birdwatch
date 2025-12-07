@@ -83,6 +83,10 @@
     gap: 20px;
 }
 
+.card-audio-group {
+    margin-top: 10px;
+}
+
 /* ===== CENÁRIO ===== */
 .cenario {
 	position: relative;
@@ -163,6 +167,7 @@
     }
 
 } 
+
 
 
 
