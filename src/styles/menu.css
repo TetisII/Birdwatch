@@ -147,6 +147,10 @@
     .card {
         width: calc(50% - 12px);
     }
+
+	.card-image {
+   		width: 95%;
+	}
 }
 
 @media screen and (max-width: 600px) {
@@ -159,6 +163,7 @@
     }
 
 } 
+
 
 
 
