@@ -82,16 +82,16 @@ const avesData = [
     {
         nome: "Canário-da-terra",
         cientifico: "Sicalis flaveola",
-        img: "src/images/ave3.png",
-        audio: "src/audios/canas.mp3",
+        img: "src/images/canário-da-terra.png",
+        audio: "src/audios/canário-da-terra_1.mp3",
         wiki: "https://www.wikiaves.com.br/wiki/canario-da-terra",
         desc: "Os machos são amarelos com a testa laranja, alguns possuem tons marrom nas costas e asas. Já as fêmeas são mais opacas que os machos, apresentando tons mais claros."
     },
     {
         nome: "Sabiá-laranjeira",
         cientifico: "Turdus rufiventris",
-        img: "src/images/ave4.png",
-        audio: "src/audios/sabia.mp3",
+        img: "src/images/sabiá-laranjeira.png",
+        audio: "src/audios/sabiá-laranjeira_1.mp3",
         wiki: "https://www.wikiaves.com.br/wiki/sabia-laranjeira",
         desc: "Seu corpo é quase totalmente amarronzado, enquanto a barriga é laranja com a garganta pálida e listrada."
     },
@@ -147,6 +147,23 @@ const avesData = [
         wiki: "https://www.wikiaves.com.br/wiki/sabia-barranco",
         desc: "Sabiá muito comum nas áreas urbanas, principalmente próximo de árvores frutificando. Não possui características marcantes, além de ser completamente marrom e com a cabeça acinzentada."
     },
+	{
+        nome: "Risadinha",
+        cientifico: "Camptostoma obsoletum",
+        img: "src/images/risadinha.png",
+        audio: "src/audios/risadinha_1.mp3",
+        wiki: "https://www.wikiaves.com.br/wiki/risadinha",
+        desc: "Facilmente encontrada em áreas bem arborizadas. Sua cor e ''risadinha'' variam entre regiões, mas é caracterizado pelo seu topetinho espetado."
+    },
+	{
+        nome: "Sanhaço-do-coqueiro",
+        cientifico: "Thraupis palmarum",
+        img: "src/images/sanhaço-do-coqueiro.png",
+        audio: "src/audios/sanhaço-do-coqueiro_1.mp3",
+		audioChamado: "src/audios/sanhaço-do-coqueiro_2.mp3",
+        wiki: "https://www.wikiaves.com.br/wiki/sanhaco-do-coqueiro",
+        desc: "Em geral é cinza misturado à tonalidades de verde-oliva, sendo suas asas mais escuras nas pontas. Frequentemente encontrado próximo de palmeiras. É muito barulhento e inquieto."
+    }
 ];
 
 /* ===== CONTROLADOR DOS CARDS ===== */
@@ -312,13 +329,15 @@ const avesQuiz = [
   { nome: "Bem-te-vi", audio: "bem-te-vi_1.mp3", audioChamado: "bem-te-vi_2.mp3" },
   { nome: "Anu-branco", audio: "anu-branco_1.mp3", audioChamado: "anu-branco_2.mp3" },
   { nome: "Anu-preto", audio: "anu-preto_1.mp3" },
-  { nome: "Canário-da-terra", audio: "canas.mp3" },
-  { nome: "Corruíra", audio: "coruíra_1.mp3", audioChamado: "corruíra_2.mp3" },
+  { nome: "Canário-da-terra", audio: "canário-da-terra_1.mp3" },
+  { nome: "Corruíra", audio: "corruíra_1.mp3", audioChamado: "corruíra_2.mp3" },
   { nome: "Lavadeira-mascarada", audio: "lavadeira-mascarada_1.mp3", audioChamado: "lavadeira-mascarada_2.mp3" },
-  { nome: "Pica-pau-verde-barrado", audio: "picas.mp3" },
-  { nome: "Sabiá-laranjeira", audio: "sabia.mp3" },
+  { nome: "Pica-pau-verde-barrado", audio: "pica-pau-verde-barrado_1.mp3" },
+  { nome: "Sabiá-laranjeira", audio: "sabiá-laranjeira_1.mp3" },
   { nome: "Quero-quero", audio: "quero-quero_1.mp3" },
-  { nome: "Sabiá-barranco", audio: "sabiá-barranco_1.mp3", audioChamado: "sabiá-barranco_2.mp3"}
+  { nome: "Sabiá-barranco", audio: "sabiá-barranco_1.mp3", audioChamado: "sabiá-barranco_2.mp3" },
+  { nome: "Risadinha", audio: "risadinha_1.mp3" },
+  { nome: "Sanhaço-do-coqueiro", audio: "sanhaço-do-coqueiro_1.mp3", audioChamado: "sanhaço-do-coqueiro_2.mp3" }
 ];
 
 let aveCorreta = null;
@@ -447,6 +466,7 @@ function reiniciarQuiz() {
 document.addEventListener("DOMContentLoaded", () => {
     carregarMaisAves();
 });
+
 
 
 
