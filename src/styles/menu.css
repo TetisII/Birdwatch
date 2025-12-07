@@ -7,6 +7,18 @@
 	padding: 0;
 }
 
+/* ===== ANIMAÇÃO ===== */
+@keyframes surgir {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* ===== CARDS ===== */
 #cards {
     width: 100%;
@@ -42,6 +54,9 @@
     box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.3);
     position: relative;
     overflow: hidden;
+
+	animation: surgirSuave 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+	opacity: 0;
 }
 
 .card-image {
@@ -167,6 +182,7 @@
     }
 
 } 
+
 
 
 
