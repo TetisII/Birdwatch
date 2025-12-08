@@ -107,10 +107,13 @@
     width: 100%;
 	height: 300vh;
 	background: linear-gradient(to bottom,
-        #180A48 0%,
-        #024489 70%,
-        #49BFF3 90%,
-        #C8FFD9 100%);
+        #0D052D 50%,
+        #131254 65%,
+        #053978 70%,
+		#0362BB 75%,
+		#2FA2FA 80%,
+		#67E9E6 85%,
+        #C8FFD9 90%);
 	z-index: -10;
 	pointer-events: none;
 }
@@ -188,3 +191,4 @@
         text-align: center;
     }
 } 
+
