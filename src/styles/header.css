@@ -31,6 +31,7 @@ header {
     text-decoration: none;
     color: #f0f0f0;
     font-weight: 600;
+    font-family: 'Outfit';
 }
 
 .nav-item a:hover {
@@ -85,5 +86,6 @@ header {
     } 
 
 }
+
 
 
