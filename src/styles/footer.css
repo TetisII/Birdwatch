@@ -5,7 +5,7 @@ footer {
     padding: 0;
 }
 
-fooster > img {
+footer > img {
     width: 100%;       
     min-width: 1000px;
     height: auto;
@@ -43,6 +43,7 @@ fooster > img {
         padding-bottom: 20px;
     }
 }
+
 
 
 
