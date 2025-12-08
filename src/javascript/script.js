@@ -257,13 +257,6 @@ function carregarMaisAves() {
 	if (indiceAtual >= total) {
         if(btnContainer) btnContainer.style.display = "none";
     }
-
-	ScrollReveal().reveal('.card', { 
-        origin: 'left', 
-        duration: 1000, 
-        distance: '20%',
-        reset: false
-    });
 }
 
 /* ===== DESCRIÇÃO ===== */
@@ -473,6 +466,7 @@ function reiniciarQuiz() {
 document.addEventListener("DOMContentLoaded", () => {
     carregarMaisAves();
 });
+
 
 
 
