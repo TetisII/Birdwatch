@@ -225,7 +225,7 @@ function carregarMaisAves() {
         htmlTemp += `
         <div class="card">
             <div class="card-info" onclick="window.open('${ave.wiki}', '_blank')" style="cursor:pointer;">
-                <img src="src/images/exclamation.png" class="icon-img" alt="Info">
+                <img src="src/images/info.png" class="icon-img" alt="Info">
             </div>
 
             <img src="${ave.img}" class="card-image" alt="${ave.nome}">
@@ -466,6 +466,7 @@ function reiniciarQuiz() {
 document.addEventListener("DOMContentLoaded", () => {
     carregarMaisAves();
 });
+
 
 
 
