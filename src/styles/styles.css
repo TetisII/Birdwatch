@@ -60,6 +60,7 @@ section {
 
 .btn-default:hover {
     background-color: var(--color-primary-3);
+    transform: translateY(2px);
 }
 
 .social-media-buttons {
@@ -141,10 +142,16 @@ section {
     width: 60%;
     margin: 0 auto;
     padding: 30px;
-    background: white;
-    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    background: #FFD789;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
     border-radius: 8px;
     text-align: center;
+
+    border: 30px solid transparent;
+    border-image-source: url('../images/frame.png');
+    border-image-slice: 15 fill;
+    border-image-repeat: stretch;
+    image-rendering: pixelated;
 }
 
 .quiz-options {
@@ -201,6 +208,7 @@ section {
         margin-bottom: 10px;
     }
 }
+
 
 
 
